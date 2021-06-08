@@ -5,6 +5,8 @@ services:
         volumes:
             - /opt/moodle-db:/var/lib/mysql
         restart: always
+        ports:
+            - "3306:3306"
         environment:
             MYSQL_ROOT_PASSWORD: ROOT_PASSWORD
             MYSQL_DATABASE: MOODLE
@@ -12,13 +14,14 @@ services:
             MYSQL_PASSWORD: MOODLE_PASSWORD
   
     moodle:
+        tty: true
         depends_on:
             - db
         image: moodle:latest
         volumes:
             - /opt/moodle:/var/www/
         ports:
-            -"80:80"
+            - "80:80"
         restart: always
         
          
