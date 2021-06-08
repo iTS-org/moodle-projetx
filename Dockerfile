@@ -2,14 +2,14 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt update -y && apt install php wget apache2 libapache2-mod-php -y && \
-	apt install graphviz aspell ghostscript clamav php-pspell php-curl \
+RUN apt update -y && apt install php wget apache2 libapache2-mod-php \
+	graphviz aspell ghostscript clamav php-pspell php-curl \
 	php-gd php-intl php-mysql php-xml php-xmlrpc php-ldap php-zip \
-	php-soap php-mbstring
+	php-soap php-mbstring -y
 
 ADD php.ini /etc/php/`ls /etc/php/`/apache2/
 
-RUN systemctl restart apache2
+RUN service apache2 restart
 
 WORKDIR /var/www/html/
 
