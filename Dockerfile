@@ -15,6 +15,8 @@ RUN cd /tmp/ && mv php.ini /etc/php/`ls /etc/php`/apache2/ && \
 	
 WORKDIR /var/www/html
 
-RUN service apache2 restart
-
 EXPOSE 80
+
+CMD service apache2 restart ; bash
+
+
