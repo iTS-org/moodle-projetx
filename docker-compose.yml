@@ -1,0 +1,22 @@
+version: '3'
+services:
+    db:
+        image: mysql:5.7
+        volumes:
+            - /opt/moodle/database:/var/lib/mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: ROOT_PASSWORD
+            MYSQL_DATABASE: MOODLE
+            MYSQL_USER: moodle
+            MYSQL_PASSWORD: MOODLE_PASSWORD
+  
+    moodle:
+        depends_on:
+            - db
+        image: moodle:latest
+        ports:
+            -"80:80"
+        restart: always
+        
+         
