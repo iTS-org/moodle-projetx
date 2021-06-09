@@ -8,7 +8,7 @@ RUN apt-get update -y && apt-get install apache2 php libapache2-mod-php wget php
 ADD php.ini /tmp/
 
 RUN cd /tmp/ && mv php.ini /etc/php/`ls /etc/php`/apache2/ && \
-	mkdir -p /var/www/ && chown -R www-data:www-data /var/www/
+	mkdir -p /var/www/ && chown -R www-data:www-data /var/www/ \
 	&& chmod -R ug+w /var/www/
 	
 WORKDIR /var/www/
