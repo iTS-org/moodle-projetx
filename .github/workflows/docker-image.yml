@@ -20,7 +20,7 @@ jobs:
         ./deploy.sh
     - name: Test du serveur web 80
       run: |
-        lsof -i:80
+        sudo lsof -i:80
         if [ $? -eq 0 ]; then
         echo "Server Web Running"
         else
@@ -29,7 +29,7 @@ jobs:
         fi
     - name: Test du serveur Mysql
       run: |
-        lsof -i:3306
+        sudo lsof -i:3306
         if [ $? -eq 0 ]; then
         echo "Server Mysql Running"
         else
