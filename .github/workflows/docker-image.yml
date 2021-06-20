@@ -18,3 +18,23 @@ jobs:
       run: |
         chmod +x deploy.sh
         ./deploy.sh
+    - name: Test du serveur web 80
+      run: |
+        lsof -i:80
+        if [ $? -eq 0 ]; then
+        echo "Server Web Running"
+        else
+        echo "Server Web Not Runing" 
+        exit 1
+        fi
+    - name: Test du serveur Mysql
+      run: |
+        lsof -i:3306
+        if [ $? -eq 0 ]; then
+        echo "Server Mysql Running"
+        else
+        echo "Server Mysql Not Runing" 
+        exit 1
+        fi
+
+
