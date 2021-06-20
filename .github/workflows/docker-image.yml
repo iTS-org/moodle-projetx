@@ -38,13 +38,23 @@ jobs:
         fi
 
     - name: Installation de l'outil requests
-      run: python3 -m pip install requests
+      run: python3 -m pip install requests mysql-connector
 
     - name: Verification de la Page d'installation
       run: |
         python3 -c 'import requests as r;
         res = r.get("http://127.0.0.1");
-        if res.status_code != 200: raise Exception("Code De Retour", "str(res.status_code)")
+        if res.status_code != 200: raise Exception("Code De Retour", str(res.status_code))
         if "Installation" not in res.text: raise Exception("Page Imprevu", "Non-Installation")'
+    
+    - name: Verification de la connexion SSH
+      run: |
+      python3 -c 'import mysql.connector as c;
+      c.connect(
+        host="127.0.0.1",
+        user="moodle",
+        password="MOODLE_PASSWORD",
+        database="MOODLE"
+      )'
 
 
