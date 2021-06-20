@@ -49,12 +49,10 @@ jobs:
     
     - name: Verification de la connexion SSH
       run: |
-      python3 -c 'import mysql.connector as c;
-      c.connect(
-        host="127.0.0.1",
-        user="moodle",
-        password="MOODLE_PASSWORD",
-        database="MOODLE"
-      )'
-
-
+        python3 -c 'import mysql.connector as c;
+        c.connect(
+          host="127.0.0.1",
+          user="moodle",
+          password="MOODLE_PASSWORD",
+          database="MOODLE"
+        )'
