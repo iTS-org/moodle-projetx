@@ -15,13 +15,19 @@ Projet moodle pour la plateforme iTS
 ### Utilisation Packages: 
       Un environnement prêt avec tous les dependances pour heberger moodle
       
-- **Images**: `docker.pkg.github.com/iteam-s/moodle-projetx/env-moodle:7.4`
+- **IMAGES**
+
+  `docker.pkg.github.com/iteam-s/moodle-projetx/env-moodle:7.4`
 
 
-- **Cmd** :`docker pull docker.pkg.github.com/iteam-s/moodle-projetx/env-moodle:7.4`
+- **CMD**
+
+   `$ docker pull docker.pkg.github.com/iteam-s/moodle-projetx/env-moodle:7.4`
 
 
-- **Dockerfile** : `FROM docker.pkg.github.com/iteam-s/moodle-projetx/env-moodle:7.4`
+- **Dockerfile**
 
+   `FROM docker.pkg.github.com/iteam-s/moodle-projetx/env-moodle:7.4`
 
-MONTER LE VOLUME Où Moodle est placé dans *`/var/www/html`*
+---------------------------------------------
+ #### Volume à monter dans:  `/var/www/html`
