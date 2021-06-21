@@ -17,10 +17,10 @@ tar -xf v3.11.0.tar.gz
 mv moodle-3.11.0/* /opt/moodle/html/
 
 # suppression du fichier compressé inutile
-rm /tmp/v3.11.0.tar.gz
+rm v3.11.0.tar.gz
 
 # creation de l'image moodle
 docker build . -t moodle
 
-# Montaga des conteneurs
+# Lancment des conteneurs avec docker-compose
 docker-compose up -d

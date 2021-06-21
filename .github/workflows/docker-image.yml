@@ -44,6 +44,8 @@ jobs:
       run: |
         python3 -c 'import requests as r;
         res = r.get("http://127.0.0.1");
-        if res.status_code != 200: raise Exception("Code De Retour", str(res.status_code))
-        if "Installation" not in res.text: raise Exception("Page Imprevu", "Non-Installation")';
-        print("Test Success")
+        if res.status_code != 200: raise Exception("Code De Retour", str(res.status_code));
+        else: print("Code retour", res.status_code);
+        if "Installation" not in res.text: raise Exception("Page Imprevu", "Non-Installation");
+        else: print("Page Installation Moodle trouvée");
+        print("Test Success")'
