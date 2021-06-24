@@ -1,5 +1,5 @@
 # moodle-projetx
-Projet moodle pour la plateforme iTS
+Projet moodle pour la plateforme iTS (iTeam-$ School)
 
 [![Docker Image CI](https://github.com/iTeam-S/moodle-projetx/actions/workflows/docker-image.yml/badge.svg)](https://github.com/iTeam-S/moodle-projetx/actions/workflows/docker-image.yml)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#README)
