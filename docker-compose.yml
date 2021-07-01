@@ -2,6 +2,7 @@ version: '3'
 services:
     db:
         image: mysql:5.7
+        hostname: database
         volumes:
             - /opt/moodle-db:/var/lib/mysql
         restart: always
@@ -15,6 +16,7 @@ services:
   
     moodle:
         tty: true
+        hostname: moodle
         depends_on:
             - db
         image: moodle:latest
