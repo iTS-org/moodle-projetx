@@ -31,3 +31,7 @@ Projet moodle pour la plateforme iTS (iTeam-$ School)
 
 ---------------------------------------------
  #### Volume à monter dans:  `/var/www/html`
+ 
+ 
+ ## Contributeurs
+![Image des contributeurs GitHub](https://contrib.rocks/image?repo=iTeam-S/moodle-projetx)
