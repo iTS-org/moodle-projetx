@@ -4,7 +4,7 @@ services:
         image: mysql:5.7
         hostname: database
         volumes:
-            - /opt/moodle-db:/var/lib/mysql
+            - moodle_data:/var/lib/mysql
         restart: always
         ports:
             - "3306:3306"
@@ -25,5 +25,9 @@ services:
         ports:
             - "80:80"
         restart: always
+    
+    
+volumes:
+    moodle_data: 
         
          
