@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -y && apt-get install apache2 php libapache2-mod-php wget php-curl php-gd php-intl \
-	php-mysql php-xml php-xmlrpc php-ldap php-zip php-soap php-mbstring -y
+	php-mysql php-xml php-xmlrpc php-ldap php-zip php-soap php-mbstring -y && apt-get clean
 
 ADD php.ini /tmp/
 
