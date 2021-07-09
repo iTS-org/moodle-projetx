@@ -1,33 +1,33 @@
 version: '3'
 services:
     db:
-        image: mysql:5.7
+        image: mariadb:latest
         hostname: database
+        container_name: moodle_db
         volumes:
             - moodle_data:/var/lib/mysql
         restart: always
         ports:
-            - "3306:3306"
+            - "3308:3306"
         environment:
-            MYSQL_ROOT_PASSWORD: ROOT_PASSWORD
-            MYSQL_DATABASE: MOODLE
-            MYSQL_USER: moodle
-            MYSQL_PASSWORD: MOODLE_PASSWORD
+            MARIADB_ROOT_PASSWORD: ROOT_PASSWORD
+            MARIADB_DATABASE: MOODLE
+            MARIADB_USER: moodle
+            MARIADB_PASSWORD: MOODLE_PASSWORD
   
     moodle:
         tty: true
         hostname: moodle
+        container_name: moodle_web
         depends_on:
             - db
+        build: .
         image: moodle:latest
         volumes:
-            - /opt/moodle:/var/www/
+            - moodle_web:/var/www/
         ports:
-            - "80:80"
-        restart: always
-    
-    
+            - "8082:80"
+        restart: always         
 volumes:
-    moodle_data: 
-        
-         
+    moodle_data:
+    moodle_web:
