@@ -15,9 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Application on Docker
-      run: |
-        chmod +x deploy.sh
-        ./deploy.sh
+      run: docker-compose up -d
+      
     - name: Test du serveur web 80
       run: |
         sudo lsof -i:80
@@ -27,6 +26,7 @@ jobs:
         echo "Server Web Not Runing" 
         exit 1
         fi
+        
     - name: Test du serveur Mysql
       run: |
         sudo lsof -i:3306
