@@ -26,7 +26,7 @@ services:
         volumes:
             - moodle_web:/var/www/
         ports:
-            - "8082:80"
+            - "80:80"
         restart: always         
 volumes:
     moodle_data:
