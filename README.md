@@ -1,6 +1,8 @@
 # moodle-projetx
 Projet moodle pour la plateforme iTS (iTeam-$ School)
 
+## Le projet a été assembler dans iTS, De ce fait, repos non maintenue.
+
 [![Docker Image CI](https://github.com/iTeam-S/moodle-projetx/actions/workflows/docker-image.yml/badge.svg)](https://github.com/iTeam-S/moodle-projetx/actions/workflows/docker-image.yml)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#README)
 
